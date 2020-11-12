@@ -13,7 +13,7 @@ public class CovidDAO {
 	static {
 		//MySQL 드라이버 클래스 로드
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
+			Class.forName("com.mysql.cj.jdbc.Driver");
 		} catch (Exception e) {
 			System.err.println("드라이버 클래스 로드 실패");
 			System.err.println(e.getMessage());
@@ -53,9 +53,8 @@ public class CovidDAO {
 		try {
 			//데이터베이스 연결
 			con = DriverManager.getConnection(
-				"jdbc:mysql://192.168.0.200:3306/sample"
-				+ "?useUnicode=true&characterEncoding=utf8",
-				"root","*******");
+				"jdbc:mysql://localhost:3306/sample?characterEncoding=UTF-8&serverTimezone=UTC",
+				"root","");
 			//System.out.println("데이터베이스 접속 성공");
 		}catch(Exception e) {
 			System.err.println("데이터베이스 연결 실패");

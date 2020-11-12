@@ -28,7 +28,7 @@ public class GoodDAOImpl implements GoodDAO {
 	private boolean connect() {
 		boolean result = false;
 		try {
-			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/sample", "root", "wnddkd");
+			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/sample?characterEncoding=UTF-8&serverTimezone=UTC", "root", "");
 			result = true;
 		} catch (Exception e) {
 			e.printStackTrace();
